@@ -16,7 +16,7 @@ galaxy_info:
         - jammy
     - name: Debian
       versions:
-        - bullseye
+        - bookworm
     - name: EL
       versions:
         - 8

@@ -25,13 +25,13 @@
     keyring: /usr/share/keyrings/nginx-archive-keyring.gpg
 - name: (Debian) add nginx apt repository
   apt_repository: 
-    repo: deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] https://nginx.org/packages/debian/ bullseye nginx
+    repo: deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] https://nginx.org/packages/debian/ bookworm nginx
     state: present 
     filename: nginx 
     update_cache: yes
-- name: (Debian) Install "nginx={{ nginx_version }}-1~bullseye"
+- name: (Debian) Install "nginx={{ nginx_version }}-1~bookworm"
   apt:
-    name: "nginx={{ nginx_version }}-1~bullseye"
+    name: "nginx={{ nginx_version }}-1~bookworm"
     state: present
 - name: (Debian) Prevent nginx from being upgraded
   dpkg_selections:
@@ -47,7 +47,7 @@
 #     keyring: /etc/apt/trusted.gpg.d/bunkerity_bunkerweb-archive-keyring.gpg
 # - name: (Debian) add bukerweb apt repositoryupgraded
 #   apt_repository: 
-#     repo: deb [signed-by=/etc/apt/trusted.gpg.d/bunkerity_bunkerweb-archive-keyring.gpg] https://packagecloud.io/bunkerity/bunkerweb/debian bullseye main
+#     repo: deb [signed-by=/etc/apt/trusted.gpg.d/bunkerity_bunkerweb-archive-keyring.gpg] https://packagecloud.io/bunkerity/bunkerweb/debian bookworm main
 #     state: present 
 #     filename: bunkerity_bunkerweb
 # - name: (Debian) Install "bunkerweb={{ bunkerweb_version }}"
